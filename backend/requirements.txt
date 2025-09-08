@@ -1,0 +1,48 @@
+# Core FastAPI & Web Framework
+fastapi==0.111.1
+uvicorn[standard]==0.23.2
+python-multipart==0.0.9
+
+# Database & ORM
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+asyncpg==0.29.0
+
+# Data Processing & Scientific Computing
+xarray==2023.12.0
+netCDF4==1.6.5
+pandas==2.1.4
+numpy==1.24.3
+scipy==1.11.4
+
+# Environment & Configuration
+python-dotenv==1.0.0
+pydantic-settings==2.1.0
+
+# Utilities & Progress
+tqdm==4.66.1
+requests==2.31.0
+aiofiles==23.2.1
+
+# Optional: Visualization (uncomment if needed)
+plotly==5.18.0
+matplotlib==3.8.2
+
+# Optional: AI/ML Components (uncomment if needed)
+langchain==0.1.0
+langchain-community==0.0.10
+langchain-google-genai==0.0.2
+chromadb==0.4.15
+google-generativeai==0.3.2
+sentence-transformers==2.2.2
+transformers==4.36.2
+torch==2.1.1
+
+# Optional: Geospatial (uncomment if needed)
+geoalchemy2==0.14.1
+shapely==2.0.2
+
+# Development & Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2
