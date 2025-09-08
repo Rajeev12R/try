@@ -6,6 +6,7 @@ Simple database initialization script that creates tables without PostGIS depend
 import os
 from config import engine
 from models import Base
+from sqlalchemy import text  # Add this import
 
 def create_tables():
     """Create all database tables"""
@@ -35,7 +36,8 @@ def test_connection():
     """Test database connection"""
     try:
         with engine.connect() as conn:
-            result = conn.execute("SELECT 1 as test")
+            # Use text() for proper SQL execution
+            result = conn.execute(text("SELECT 1 as test"))
             print("✅ Database connection test passed")
             return True
     except Exception as e:
