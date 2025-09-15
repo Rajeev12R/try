@@ -1,2 +1,5 @@
 .venv
+./myenv
 __pycache__
+try\backend\app\chroma_db_storage
+./app/chroma_db_storage
