@@ -30,15 +30,14 @@ class ProfileMetadata(Base):
     platform_number = Column(String(8), ForeignKey('float_metadata.platform_number'), nullable=False, index=True)
     cycle_number = Column(Integer, index=True)
     direction = Column(String(1))
-    juld = Column(DateTime, index=True)  # UTC time of the station
+    juld = Column(DateTime, index=True) 
     juld_qc = Column(String(1))
-    juld_location = Column(DateTime)  # UTC time of the location
+    juld_location = Column(DateTime)  
     latitude = Column(Float, index=True)
     longitude = Column(Float, index=True)
     position_qc = Column(String(1))
-    # geometry = Column(Geometry(geometry_type='POINT', srid=4326))  # Commented out to avoid PostGIS issues
     data_type = Column(String(16))
-    station_parameters = Column(ARRAY(String(16)))  # List of available parameters
+    station_parameters = Column(ARRAY(String(16))) 
     config_mission_number = Column(Integer)
     profile_pres_qc = Column(String(1))
     profile_temp_qc = Column(String(1))
@@ -73,14 +72,14 @@ class Measurement(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     platform_number = Column(String(8), nullable=False, index=True)
     cycle_number = Column(Integer, index=True)
-    pres = Column(Float, index=True)  # Pressure in decibar
+    pres = Column(Float, index=True)
     pres_qc = Column(String(1))
-    temp = Column(Float)  # Temperature in Celsius
+    temp = Column(Float)
     temp_qc = Column(String(1))
     temp_adjusted = Column(Float)
     temp_adjusted_qc = Column(String(1))
     temp_adjusted_error = Column(Float)
-    psal = Column(Float)  # Practical salinity
+    psal = Column(Float)
     psal_qc = Column(String(1))
     psal_adjusted = Column(Float)
     psal_adjusted_qc = Column(String(1))

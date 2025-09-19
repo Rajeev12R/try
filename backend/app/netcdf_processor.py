@@ -7,6 +7,7 @@ from config import engine
 from models import Base, FloatMetadata, ProfileMetadata, Measurement, Calibration, ProcessingHistory
 from tqdm import tqdm
 import datetime
+from chroma_embeddings import vector_store
 
 SessionLocal = sessionmaker(bind=engine)
 
@@ -236,6 +237,10 @@ def process_netcdf(file_path):
         
         session.commit()
         print("NetCDF processing complete!")
+
+        print("Indexing profiles in vector database...")
+        vector_store.index_profiles()
+        print("Vector indexing complete!")
         
     except Exception as e:
         session.rollback()
